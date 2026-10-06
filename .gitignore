@@ -1,0 +1,35 @@
+# Existing directories are outside this platform repository.
+/quiz_final/
+/QuizzyFOx/
+/.local/
+
+# Dependencies and generated output.
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+**/next-env.d.ts
+dist/
+**/dist/
+coverage/
+*.tsbuildinfo
+
+# Local configuration and credentials.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+# Local tools and logs.
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

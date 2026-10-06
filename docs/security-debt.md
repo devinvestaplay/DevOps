@@ -1,0 +1,5 @@
+# Dependency security debt
+
+Milestone 6 review on 2026-09-24 ran `npm audit --omit=dev --json` without changing dependencies. It reported 4 high, 12 moderate, and 1 low advisories. The four high entries are `eas-cli` and its transitive `minimatch`, `nanoid`, and `tar` dependency paths. They concern regular expression denial of service, invalid generator size handling, and crafted tar archive recursion. The audit's automated remedy would require a major `eas-cli` change and is outside Milestone 6.
+
+The AWS SDK packages introduced in Milestone 6 were not among the high-severity paths. The existing Expo build workflow invokes EAS CLI on project source, so these advisories remain relevant to the platform's existing build function. Before a wider or multi-user deployment, review updated EAS CLI releases and validate the build workflow with safe dependency versions; do not run `npm audit fix --force` without a regression plan. Restrict build initiation to its existing authorized roles and trusted project source roots in the meantime.

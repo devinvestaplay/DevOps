@@ -1,0 +1,1 @@
+ALTER TABLE `deployment_step_records` MODIFY COLUMN `step_type` enum('preflight','capture_current_revision','fetch_source','checkout_revision','install_dependencies','build','restart_service','health_check','rollback_checkout','rollback_install','rollback_build','rollback_restart','rollback_health_check') NOT NULL;
